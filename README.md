@@ -1,4 +1,4 @@
-[![](https://images.microbadger.com/badges/image/cagataygurturk/docker-ssh-tunnel.svg)](https://microbadger.com/images/cagataygurturk/docker-ssh-tunnel)
+[![](https://images.microbadger.com/badges/image/razemio/docker-ssh-tunnel.svg)](https://microbadger.com/images/razemio/docker-ssh-tunnel)
 
 # Docker SSH Tunnel
 
@@ -14,7 +14,7 @@ This Docker creates a simple SSH tunnel over a server. It is very useful when yo
     Host mysql-tunnel # You can use any name
             HostName ssh-tunnel.corporate.tld # Tunnel 
             IdentityFile ~/.ssh/id_rsa # Private key location
-            User cagatay.guertuerk # Username to connect to SSH service
+            User razemio # Username to connect to SSH service
             ForwardAgent yes
             TCPKeepAlive yes
             ConnectTimeout 5
@@ -30,11 +30,10 @@ This Docker creates a simple SSH tunnel over a server. It is very useful when yo
     version: '2'
     services:
       mysql:
-        image: cagataygurturk/docker-ssh-tunnel:0.0.1
+        image: razemio/docker-ssh-tunnel:latest
         volumes:
           - $HOME/.ssh:/root/ssh:ro
         environment:
-          TUNNEL_HOST: mysql-tunnel
           REMOTE_HOST: tunneled-sql.corporate.internal.tld
           LOCAL_PORT: 3306
           REMOTE_PORT: 3306
