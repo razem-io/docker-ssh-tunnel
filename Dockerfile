@@ -1,5 +1,5 @@
-FROM alpine:3.2
-MAINTAINER Cagatay Gurturk <cguertuerk@ebay.de>
+FROM alpine:3.11
+MAINTAINER Julian Pieles <mail@razem.io>
 
 RUN apk add --update openssh-client && rm -rf /var/cache/apk/*
 
