@@ -9,5 +9,6 @@ ssh \
 -o StrictHostKeyChecking=no \
 -N \
 -L *:$LOCAL_PORT:$REMOTE_HOST:$REMOTE_PORT \
+$TUNNEL_HOST
 && while true; do sleep 30; done;
 EXPOSE 1-65535
